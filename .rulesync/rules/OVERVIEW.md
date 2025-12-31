@@ -8,3 +8,8 @@ globs: ["**/*"]
 # プロジェクト概要
 
 <ここにこのプロジェクトの概要を書く>
+
+## agent-docs
+
+agents-docs/
+  |- agent-docs_guideline.md
