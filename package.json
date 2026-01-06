@@ -3,9 +3,9 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.2.0",
-    "@commitlint/config-conventional": "^20.2.0",
+    "@commitlint/cli": "^20.3.0",
+    "@commitlint/config-conventional": "^20.3.0",
     "husky": "^9.1.7",
-    "rulesync": "^4.3.2"
+    "rulesync": "^5.1.1"
   }
 }
