@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dyoshikawa/rulesync/refs/heads/main/config-schema.json",
+  "targets": ["claudecode", "geminicli", "copilot"],
+  "features": ["*"],
+  "baseDirs": ["."],
+  "delete": true,
+  "verbose": false,
+  "global": false,
+  "simulateCommands": true,
+  "simulateSubagents": true,
+  "simulateSkills": true,
+  "modularMcp": true
+}
