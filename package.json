@@ -6,6 +6,9 @@
     "@commitlint/cli": "^20.3.0",
     "@commitlint/config-conventional": "^20.3.0",
     "husky": "^9.1.7",
-    "rulesync": "^5.1.1"
+    "rulesync": "^5.2.0"
+  },
+  "overrides": {
+    "@modelcontextprotocol/sdk": "^1.25.2"
   }
 }
