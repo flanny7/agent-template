@@ -7,7 +7,7 @@ description: "Use this skill when the user asks to save, remember, recall, or or
 
 A persistent memory space for storing knowledge that survives across conversations.
 
-**Location:** `.claude/skills/agent-memory/memories/`
+**Location:** `agent-docs/tmp/agent-memory/memories/`
 
 ## Proactive Usage
 
@@ -79,19 +79,19 @@ Use summary-first approach to efficiently find relevant memories:
 
 ```bash
 # 1. List categories
-ls .claude/skills/agent-memory/memories/
+ls agent-docs/tmp/agent-memory/memories/
 
 # 2. View all summaries
-rg "^summary:" .claude/skills/agent-memory/memories/ --no-ignore --hidden
+rg "^summary:" agent-docs/tmp/agent-memory/memories/ --no-ignore --hidden
 
 # 3. Search summaries for keyword
-rg "^summary:.*keyword" .claude/skills/agent-memory/memories/ --no-ignore --hidden -i
+rg "^summary:.*keyword" agent-docs/tmp/agent-memory/memories/ --no-ignore --hidden -i
 
 # 4. Search by tag
-rg "^tags:.*keyword" .claude/skills/agent-memory/memories/ --no-ignore --hidden -i
+rg "^tags:.*keyword" agent-docs/tmp/agent-memory/memories/ --no-ignore --hidden -i
 
 # 5. Full-text search (when summary search isn't enough)
-rg "keyword" .claude/skills/agent-memory/memories/ --no-ignore --hidden -i
+rg "keyword" agent-docs/tmp/agent-memory/memories/ --no-ignore --hidden -i
 
 # 6. Read specific memory file if relevant
 ```
@@ -107,9 +107,9 @@ rg "keyword" .claude/skills/agent-memory/memories/ --no-ignore --hidden -i
 3. Write file with required frontmatter (use `date +%Y-%m-%d` for current date)
 
 ```bash
-mkdir -p .claude/skills/agent-memory/memories/category-name/
+mkdir -p agent-docs/tmp/agent-memory/memories/category-name/
 # Note: Check if file exists before writing to avoid accidental overwrites
-cat > .claude/skills/agent-memory/memories/category-name/filename.md << 'EOF'
+cat > agent-docs/tmp/agent-memory/memories/category-name/filename.md << 'EOF'
 ---
 summary: "Brief description of this memory"
 created: 2025-01-15
@@ -126,9 +126,9 @@ EOF
 - **Update**: When information changes, update the content and add `updated` field to frontmatter
 - **Delete**: Remove memories that are no longer relevant
   ```bash
-  trash .claude/skills/agent-memory/memories/category-name/filename.md
+  trash agent-docs/tmp/agent-memory/memories/category-name/filename.md
   # Remove empty category folders
-  rmdir .claude/skills/agent-memory/memories/category-name/ 2>/dev/null || true
+  rmdir agent-docs/tmp/agent-memory/memories/category-name/ 2>/dev/null || true
   ```
 - **Consolidate**: Merge related memories when they grow
 - **Reorganize**: Move memories to better-fitting categories as the knowledge base evolves
