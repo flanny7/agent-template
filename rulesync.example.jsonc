@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/dyoshikawa/rulesync/refs/heads/main/config-schema.json",
-  "targets": ["claudecode", "geminicli", "copilot"],
+  "targets": ["antigravity", "claudecode", "copilot", "geminicli"],
   "features": ["*"],
   "baseDirs": ["."],
   "delete": true,
