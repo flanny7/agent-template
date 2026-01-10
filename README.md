@@ -30,7 +30,7 @@ AIエージェントを使った開発をする際のテンプレートプロジ
 `overview.md` に `./agent-docs/**` のパスだけを記載し、ナレッジを別ファイルにまとめます。
 ファイル名がそのナレッジを使うべきか判断する基準になるので、ファイル名の命名が大事です。
 
-詳細は `./agent-docs/agent-docs_guideline.md` にまとめています。
+詳細は [./agent-docs/agent-docs_guideline.md](./agent-docs/agent-docs_guideline.md) にまとめています。
 
 ## skills
 
@@ -42,7 +42,9 @@ AIエージェントを使った開発をする際のテンプレートプロジ
 「会話を覚えて」「この会話を思い出して」というと使ってくれます。
 ContextWindowの消費を最小限にするためにセッションを切り替えたいときに役立ちます。
 
-`.rulesync/skills/agent-memory/LICENSE.txt` に記載している通り、rulesyncとの親和性を高めるために、保存場所を `./agent-docs/tmp` にしています。
+- <https://github.com/yamadashy/repomix/tree/main/.claude/skills/agent-memory>
+
+[.rulesync/skills/agent-memory/LICENSE.txt](.rulesync/skills/agent-memory/LICENSE.txt) に記載している通り、rulesyncとの親和性を高めるために、保存場所を `./agent-docs/tmp` にしています。
 また、`./agent-docs/tmp`は gitignore対象にしています。
 
 また、明示的に使えるように commands も用意しています。
