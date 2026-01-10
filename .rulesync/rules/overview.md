@@ -1,13 +1,13 @@
 ---
 root: true
 targets: ["*"]
-description: "<ここにこのプロジェクトの概要を書く>"
+description: "agent-template"
 globs: ["**/*"]
 ---
 
 # プロジェクト概要
 
-<ここにこのプロジェクトの概要を書く>
+AIエージェントを使った開発をする際のテンプレートプロジェクト。
 
 ## 基本ルール
 
