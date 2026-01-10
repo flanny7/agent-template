@@ -1,6 +1,7 @@
 # ======== Custom ========
 rulesync.jsonc
 .gemini/settings.json
+agent-docs/tmp/
 
 # ========================
 
