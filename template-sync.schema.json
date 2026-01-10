@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Template Sync Configuration",
+  "description": "Configuration for syncing updates from template repository",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference"
+    },
+    "upstream": {
+      "type": "string",
+      "description": "URL of the template repository (used if git remote upstream is not set)",
+      "format": "uri"
+    },
+    "upstreamBranch": {
+      "type": "string",
+      "description": "Branch to sync from upstream",
+      "default": "master"
+    },
+    "include": {
+      "type": "array",
+      "description": "Glob patterns for files to include in sync",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "exclude": {
+      "type": "array",
+      "description": "Glob patterns for files to exclude from sync",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "mergeStrategy": {
+      "type": "object",
+      "description": "Merge strategy configuration",
+      "properties": {
+        "default": {
+          "type": "string",
+          "enum": ["prompt", "upstream", "local", "manual"],
+          "default": "prompt",
+          "description": "Default strategy when conflicts occur"
+        },
+        "patterns": {
+          "type": "object",
+          "description": "Strategy overrides for specific glob patterns",
+          "additionalProperties": {
+            "type": "string",
+            "enum": ["prompt", "upstream", "local", "manual"]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "postSync": {
+      "type": "array",
+      "description": "Commands to run after successful sync",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "lastSyncedCommit": {
+      "type": ["string", "null"],
+      "description": "Hash of the last synced commit (automatically updated)"
+    }
+  },
+  "required": ["upstream", "include"],
+  "additionalProperties": false
+}

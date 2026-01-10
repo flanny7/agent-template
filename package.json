@@ -1,11 +1,15 @@
 {
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "sync": "bun run scripts/template-sync/index.ts",
+    "sync:check": "bun run scripts/template-sync/index.ts --dry-run"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.3.0",
     "@commitlint/config-conventional": "^20.3.0",
+    "@types/micromatch": "^4.0.10",
     "husky": "^9.1.7",
+    "micromatch": "^4.0.8",
     "rulesync": "^5.2.0"
   },
   "overrides": {

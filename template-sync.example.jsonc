@@ -1,0 +1,58 @@
+{
+  "$schema": "./template-sync.schema.json",
+
+  // テンプレートリポジトリのURL
+  // git remote upstreamが未設定の場合に使用
+  "upstream": "https://github.com/flanny/agent-template.git",
+
+  // 同期元のブランチ（デフォルト: master）
+  "upstreamBranch": "master",
+
+  // 同期対象のファイル（glob パターン）
+  // テンプレートの共通部分を指定
+  "include": [
+    ".rulesync/skills/**/*",
+    ".rulesync/commands/**/*",
+    ".rulesync/subagents/**/*",
+    ".rulesync/guideline.md",
+    ".rulesync/.aiignore",
+    "agent-docs/agent-docs_guideline.md",
+    ".husky/**/*",
+    "commitlint.config.cjs",
+    "scripts/template-sync/**/*"
+  ],
+
+  // 同期から除外するファイル（glob パターン）
+  // プロジェクト固有の部分を指定
+  "exclude": [
+    ".rulesync/rules/**/*",
+    "rulesync.jsonc",
+    "package.json",
+    "README.md",
+    "agent-docs/tmp/**/*"
+  ],
+
+  // マージ戦略
+  "mergeStrategy": {
+    // デフォルト: 競合時に対話的に確認
+    // オプション: "prompt" | "upstream" | "local" | "manual"
+    "default": "prompt",
+
+    // 特定パターンの戦略をオーバーライド
+    "patterns": {
+      // スキルは常にテンプレートを優先
+      ".rulesync/skills/**/*": "upstream",
+      // コマンドも常にテンプレートを優先
+      ".rulesync/commands/**/*": "upstream"
+    }
+  },
+
+  // 同期完了後に実行するコマンド
+  "postSync": [
+    "bun install",
+    "bunx rulesync generate"
+  ],
+
+  // 最後に同期したコミットハッシュ（自動更新）
+  "lastSyncedCommit": null
+}

@@ -2,6 +2,7 @@
 rulesync.jsonc
 .gemini/settings.json
 agent-docs/tmp/
+template-sync.jsonc
 
 # ========================
 
