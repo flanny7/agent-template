@@ -1,1 +1,0 @@
-https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/youtube-transcript

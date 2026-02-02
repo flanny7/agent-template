@@ -1,7 +1,4 @@
 # ======== Custom ========
-rulesync.jsonc
-.gemini/settings.json
-agent-docs/tmp/
 
 # ========================
 
@@ -210,12 +207,15 @@ vite.config.ts.timestamp-*
 **/AGENTS.md
 **/.agents/
 **/.agent/rules/
+**/.agent/skills/
 **/.agent/workflows/
 **/.augmentignore
 **/.augment/rules/
 **/.augment-guidelines
 **/CLAUDE.md
+**/CLAUDE.local.md
 **/.claude/CLAUDE.md
+**/.claude/CLAUDE.local.md
 **/.claude/memories/
 **/.claude/rules/
 **/.claude/commands/
@@ -253,6 +253,10 @@ vite.config.ts.timestamp-*
 **/.kilocode/mcp.json
 **/.kilocodeignore
 **/.kiro/steering/
+**/.kiro/prompts/
+**/.kiro/skills/
+**/.kiro/agents/
+**/.kiro/settings/mcp.json
 **/.aiignore
 **/.opencode/memories/
 **/.opencode/command/
@@ -260,6 +264,7 @@ vite.config.ts.timestamp-*
 **/.opencode/skill/
 **/QWEN.md
 **/.qwen/memories/
+**/replit.md
 **/.roo/rules/
 **/.roo/skills/
 **/.rooignore
@@ -268,4 +273,6 @@ vite.config.ts.timestamp-*
 **/.warp/
 **/WARP.md
 **/modular-mcp.json
+.rulesync/rules/*.local.md
+rulesync.local.jsonc
 !.rulesync/.aiignore
