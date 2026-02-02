@@ -17,39 +17,9 @@ AIエージェントを使った開発をする際のテンプレートプロジ
 - husky
 - commitlint
 
-## rules
+## Quick Start
 
-### overview.md
-
-核となるルールファイルです。
-`bunx rulesync generate` で `CLAUDE.md`や`AGENTS.md`などになります。
-
-#### agent-docs
-
-ベストプラクティスに基づいて `overview.md` に「段階的開示」を提供します。
-`overview.md` に `./agent-docs/**` のパスだけを記載し、ナレッジを別ファイルにまとめます。
-ファイル名がそのナレッジを使うべきか判断する基準になるので、ファイル名の命名が大事です。
-
-詳細は [./agent-docs/agent-docs_guideline.md](./agent-docs/agent-docs_guideline.md) にまとめています。
-
-## skills
-
-テンプレートに入れているスキルをいくつか紹介します。
-
-### agent-memory
-
-会話の要約を一時保存 & 再展開するスキルです。
-「会話を覚えて」「この会話を思い出して」というと使ってくれます。
-ContextWindowの消費を最小限にするためにセッションを切り替えたいときに役立ちます。
-
-- <https://github.com/yamadashy/repomix/tree/main/.claude/skills/agent-memory>
-
-[.rulesync/skills/agent-memory/LICENSE.txt](.rulesync/skills/agent-memory/LICENSE.txt) に記載している通り、rulesyncとの親和性を高めるために、保存場所を `./agent-docs/tmp` にしています。
-また、`./agent-docs/tmp`は gitignore対象にしています。
-
-また、明示的に使えるように commands も用意しています。
-
-```txt
-/save-agent-memory
-/recall-agent-memory
-```
+- `bunx rulesync generate`
+  - rulesync管轄の設定ファイルを生成
+- `bunx add-skill {skill-repogitory}`
+  - AgentSkillsの導入（global）
